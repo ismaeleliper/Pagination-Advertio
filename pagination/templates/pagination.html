@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <label for="limit">Limit:</label>
+        <input type="text" name="limit" id="limit">
+        {% for i in data.data %}
+            <h3>Decription: {{ i.description }} | ID: {{ i.id }}</h3>
+            <p>--------------------------------------------------</p>
+        {% endfor %}
+    </div>
+    <div>
+        {% for i in data.array_of_pages %}
+            <button><a href="http://localhost:8000/text?page={{i}}&limit=2">{{ i }}</a></button>
+        {% endfor %}
+    </div>
+</body>
+</html>
