@@ -57,9 +57,9 @@ class PaginationAppTestCase(TestCase):
         self.assertEqual(text.pk, 2)
 
     def test_view_pagination(self):
-        response = self.client.get('http://localhost:8000/text/?page=1&limit=1')
+        response = self.client.get('http://localhost:8000/text?page=1&limit=1')
         self.assertEqual(response.status_code, 200)
 
     def test_view_pagination_exception(self):
-        response = self.client.get('http://localhost:8000/text/?page=1')
+        response = self.client.get('http://localhost:8000/text?page=1')
         self.assertEqual(response.status_code, 400)
