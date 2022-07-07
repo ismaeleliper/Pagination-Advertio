@@ -1,5 +1,5 @@
 from django.test import TestCase
-from pagination.views import Pagination
+from pagination.views import Pagination, pagination_buttons
 from pagination.models import Text
 
 
@@ -45,6 +45,12 @@ class PaginationTestCase(TestCase):
     def test_result_by_limit_exception(self):
         with self.assertRaises(Exception):
             Pagination(limit=4, model_class=TestCase).result(number_of_page_choosen=1)
+
+
+class ButtonsTestCase(TestCase):
+    def test_pagination_buttons(self):
+        a = pagination_buttons(page_choosen=1, array_of_pages=[1, 2, 3, 4])
+        self.assertEqual(a, [0, 1, 2, 3])
 
 
 class PaginationAppTestCase(TestCase):

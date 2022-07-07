@@ -89,7 +89,7 @@ def pagination_buttons(page_choosen: int, array_of_pages: list):
         ]
     else:
         if max(array_of_pages) < 10:
-            return [i for i in range(max(array_of_pages))]
+            return [i for i in range(1, max(array_of_pages))]
 
 
 def pagination_text(request):
